@@ -2,5 +2,15 @@
 {% block content %}
 
 {{ block.super }}
-<div class="container">gggg</div>
+<div class="container">
+
+    <div class="row-md-12 ">
+        <div class=" col-md-12">
+            <img class="img-circle" alt="image" width=150 height=100  src='{{user.profile.image.url}}'>
+            <h2 class='account-heading'>{{user.username}}</h2>
+            <p class='text-secondary'>{{user.bio}}</p>
+            <p class='text-secondary'>{{user.email}}</p>
+        </div>
+    </div>
+</div>
 {% endblock %}

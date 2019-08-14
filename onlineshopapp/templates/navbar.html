@@ -60,13 +60,13 @@
           <li style="list-style: none;">
             <a class="nav-link btn " href="profile">
               <figure>
-                <img class="img-circle" alt="" width=30 height=30 src=''>
-             <figcaption></figcaption>-
+                <img class="img-circle" alt="" width=30 height=30 src='{{user.profile.image.url}}'>
+             <figcaption>{{user.username}}</figcaption>-
               </figure>
             </a>
             <a class="btn " href="">n</a>
             <a class="btn " href="">B</a>
-            <a class="btn " href="">P</a>
+            <a class="btn " href="{%url 'details'%}">Profile</a>
           </li>
 
         </ul>
