@@ -1,11 +1,14 @@
 from django.shortcuts import render,redirect
 from . forms import UserRegistrationForm,profileForm
 from django.contrib.auth.decorators import login_required
+from.models import Item,Profile,Order,OrderItem
 # Create your views here.
 
 def home(request):
-       
-    return render(request, "home.html")
+    context ={
+        "items":Item.objects.all()
+    }
+    return render(request, "home.html",context)
     
 def register(request):
     if request.method == "POST":
