@@ -42,3 +42,19 @@ def add_profile(request):
     else:
         form = profileForm()
     return render(request, 'profile/profileupdate.html', {"form": form})
+
+@login_required(login_url='/accounts/login/')
+def search_item(request):
+    
+    if 'items' in request.GET and request.GET["items"]:
+        name = request.GET.get("items")
+        items = Item.search_item(name)
+        print(items)
+        message = f"{name}"
+
+        return render(request, 'search.html', {"message": message, "categories": items})
+
+    else:
+        message = "You haven't searched for any item"
+        return render(request, 'search.html', {"message": message})
+    

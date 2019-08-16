@@ -9,6 +9,8 @@ urlpatterns = [
     url(r'register',views.register,name= 'signup'),
     url(r'details',views.add_profile,name= 'details'),
     url(r'profile',views.profile,name= 'profile'),
+    url(r'^search/', views.search_item, name = 'find'),
+    
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

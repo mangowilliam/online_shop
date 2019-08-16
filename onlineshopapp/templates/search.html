@@ -1,0 +1,48 @@
+{%extends 'base.html'%} {% load bootstrap3 %}
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        {% if categories%}
+        <h2>Found {{ categories|length }} item(s) of searched category; {{message}}</h2>
+        {% else %}
+        <h2> Found 0 items for the searched gategory, {{message}}</h2>
+        {% endif %}
+
+    </div>
+
+   
+
+        {% if categories %}
+        {% for categories in categories %}
+        <div class="row-md-12">
+
+            <div class="col-lg-3 col-md-6 col-xs-12 col-sm-12 mb-4">
+
+                <div class="card">
+
+                    <div class="view overlay">
+                        <img src="{{ categories.image.url }}" class="card-img-top" width=250px height=250px>
+                    </div>
+
+
+                    <h4 class="font-weight-bold blue-text">
+                        <strong>ksh
+
+                            {{ item.price }}
+
+                        </strong>
+                    </h4>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+        {% endif %}
+    
+</div>
+
+{% endblock %}
